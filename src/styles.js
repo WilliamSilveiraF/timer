@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from '@mui/material'
 
 export const Main = styled.main`
   position: absolute;
@@ -6,7 +7,7 @@ export const Main = styled.main`
   bottom: 0;
   left: 0;
   right: 0;
-  background: #262834;
+  background: black;
   color: white;
   display: flex;
 `
@@ -33,11 +34,21 @@ export const Length = styled.div`
 `
 export const Operator = styled.div`
   height: 25px;
-  width: 120px;
+  width: 175px;
   display: flex;
   justify-content: space-between;
-  font-size: 2rem;
   align-items: center;
+  font-size: 2rem;
+  
+`
+export const Arrow = styled(Button).attrs({
+  variant: 'button'
+})`
+  
+  & > * {
+    font-size: 2rem;
+  }
+  
 `
 
 export const Screen = styled.div`
