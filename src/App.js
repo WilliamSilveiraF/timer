@@ -1,10 +1,39 @@
 import React from "react";
+import { BsFillArrowUpSquareFill, BsFillArrowDownSquareFill } from 'react-icons/bs';
+import { 
+  Main,
+  Container,
+  Panel,
+  Screen,
+  Length,
+  Operator
+} from './styles'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Initial Stage</h1>
-    </div>
+    <Main>
+      <Container>
+        <Panel>
+          <Length>
+            <h3>Break Length</h3>
+            <Operator>
+              <BsFillArrowUpSquareFill />
+              <p>1</p>
+              <BsFillArrowDownSquareFill />
+            </Operator>
+          </Length>
+          <Length>
+            <h3>Session Length</h3>
+            <Operator>
+              <BsFillArrowUpSquareFill />
+              <p>1</p>
+              <BsFillArrowDownSquareFill />
+            </Operator>
+          </Length>
+        </Panel>
+        <Screen>Teste</Screen>
+      </Container>
+    </Main>
   );
 }
 
