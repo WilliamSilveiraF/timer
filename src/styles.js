@@ -15,7 +15,6 @@ export const Main = styled.main`
 export const Container = styled.section`
   width: 320px;
   height: 440px;
-  border: 1px solid hotpink;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -23,7 +22,6 @@ export const Container = styled.section`
 `
 
 export const Panel = styled.div`
-  border: 1px solid yellow;
   display: flex;
   flex-direction: column;
 `
@@ -52,5 +50,31 @@ export const Arrow = styled(Button).attrs({
 `
 
 export const Screen = styled.div`
-  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+`
+
+export const Clock = styled.div`
+  line-height: 12px;
+  border-radius: 36px;
+  text-align: center;
+  width: 200px;
+  border: 10px solid #262834;
+
+  & > h1 {
+    font-size: 2.5rem;
+  }
+  & > h4 {
+    font-size: 1.5rem;
+  }
+`
+export const Controllers = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  & > * {
+    font-size: 2rem;
+  }
 `

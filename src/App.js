@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from 'react-icons/ai';
-import { Button } from '@mui/material'
+import { BsFillPlayFill, BsFillPauseFill, BsRecycle } from 'react-icons/bs'
+
 import { 
   Main,
   Container,
@@ -8,7 +9,9 @@ import {
   Screen,
   Length,
   Operator,
-  Arrow
+  Arrow,
+  Clock,
+  Controllers
 } from './styles'
 
 function App() {
@@ -56,7 +59,18 @@ function App() {
             </Operator>
           </Length>
         </Panel>
-        <Screen>Teste</Screen>
+
+        <Screen>
+          <Clock>
+            <h4>Session</h4>
+            <h1>60 : 00</h1>
+          </Clock>
+          <Controllers>
+              <BsFillPlayFill />
+              <BsFillPauseFill />
+              <BsRecycle />
+          </Controllers>
+        </Screen>
       </Container>
     </Main>
   );
