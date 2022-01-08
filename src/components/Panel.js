@@ -2,6 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 import { Button } from '@mui/material'
 import { AiOutlineArrowUp, AiOutlineArrowDown } from 'react-icons/ai';
+import { useGlobalContext } from '../context'
 
 const Panel = styled.div`
   display: flex;
@@ -30,23 +31,34 @@ const Arrow = styled(Button).attrs({
   }
 `
 
-const myPanel = () => {
+const MyPanel = () => {
+  const { 
+   breakLength, 
+   sessionLength, 
+   addBreak, 
+   addSession,
+   downBreak,
+   downSession
+  } = useGlobalContext()
   return (
    <Panel>
      <Length>
        <h3>Break Length</h3>
        <Operator>
-         <Arrow style={{
+         <Arrow 
+          style={{
            background: '#262834'
-           }}
+          }}
+          onClick={() => addBreak()}
          >
            <AiOutlineArrowUp />
          </Arrow>
-         <p>1</p>
+         <p>{ breakLength }</p>
          <Arrow
            style={{
            background: '#262834'
            }}
+           onClick={() => downBreak()}
          >
            <AiOutlineArrowDown />
          </Arrow>
@@ -59,14 +71,16 @@ const myPanel = () => {
            style={{
            background: '#262834'
            }}
+           onClick={() => addSession()}
          >
            <AiOutlineArrowUp />
          </Arrow>
-         <p>1</p>
+         <p>{ sessionLength }</p>
          <Arrow
            style={{
            background: '#262834'
            }}
+           onClick={() => downSession()}
          >
            <AiOutlineArrowDown />
          </Arrow>
@@ -76,4 +90,4 @@ const myPanel = () => {
   )
 }
 
-export default myPanel;
+export default MyPanel;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import { BsFillPlayFill, BsFillPauseFill, BsRecycle } from 'react-icons/bs';
+import { useGlobalContext } from "../context";
 
 const Screen = styled.div`
   display: flex;
@@ -32,20 +33,21 @@ const Controllers = styled.div`
   }
 `
 
-const myScreen = () => {
+const MyScreen = () => {
+  const { timer, formatTime } = useGlobalContext()
   return (
    <Screen>
      <Clock>
        <h4>Session</h4>
-       <h1>60 : 00</h1>
+       <h1>{ formatTime(timer.time) }</h1>
      </Clock>
      <Controllers>
-         <BsFillPlayFill />
-         <BsFillPauseFill />
-         <BsRecycle />
+         <BsFillPlayFill onClick={() => console.log({play: true, time: '00 : 00'})} />
+         <BsFillPauseFill onClick={() => console.log({play: false, time: '00 : 00'})} />
+         <BsRecycle onClick={() => console.log({play: false, time: '00 : 00'})} />
      </Controllers>
    </Screen>
   );
 }
 
-export default myScreen
+export default MyScreen

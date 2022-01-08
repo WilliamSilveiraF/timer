@@ -3,6 +3,7 @@ import { Panel, Screen } from './components'
 import { Main, Container } from './styles'
 
 function App() {
+  
   return (
     <Main>
       <Container>
