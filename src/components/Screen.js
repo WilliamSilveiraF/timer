@@ -33,8 +33,42 @@ const Controllers = styled.div`
   }
 `
 
+const Play = styled(BsFillPlayFill).attrs({
+  variant: 'button'
+})`
+  &:hover {
+   cursor: pointer;
+   color: #56cbdb;
+  }
+`
+const Pause = styled(BsFillPauseFill).attrs({
+  variant: 'button'
+})`
+  &:hover {
+   cursor: pointer;
+   color: #56cbdb;
+  }
+`
+const Recycle = styled(BsRecycle).attrs({
+  variant: 'button'
+})`
+  &:hover {
+   cursor: pointer;
+   color: #56cbdb;
+  }
+`
+
 const MyScreen = () => {
-  const { timer, formatTime } = useGlobalContext()
+  const { 
+   timer,
+   setTimer,
+   formatTime,
+   startTimer,
+   pauseTimer,
+   recycleTimer
+  } = useGlobalContext()
+  setTimer(timer)
+  console.log(timer)
   return (
    <Screen>
      <Clock>
@@ -42,9 +76,15 @@ const MyScreen = () => {
        <h1>{ formatTime(timer.time) }</h1>
      </Clock>
      <Controllers>
-         <BsFillPlayFill onClick={() => console.log({play: true, time: '00 : 00'})} />
-         <BsFillPauseFill onClick={() => console.log({play: false, time: '00 : 00'})} />
-         <BsRecycle onClick={() => console.log({play: false, time: '00 : 00'})} />
+         <Play 
+          onClick={() => startTimer()} 
+         />
+         <Pause 
+          onClick={() => pauseTimer()} 
+         />
+         <Recycle 
+          onClick={() => recycleTimer()} 
+         />
      </Controllers>
    </Screen>
   );
