@@ -1,4 +1,4 @@
-let seconds = 120
+let seconds = 10
 
 const idVar = setInterval(() => {
   if (seconds <= 0) {
@@ -7,4 +7,4 @@ const idVar = setInterval(() => {
    seconds -= 1
    console.log(seconds)
   }
-}, 1000)
+}, 1000, console.log('VASCO'))
