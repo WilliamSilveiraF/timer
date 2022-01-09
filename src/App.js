@@ -1,10 +1,16 @@
 import React from "react";
+import { Panel, Screen } from './components'
+import { Main, Container } from './styles'
 
 function App() {
+  
   return (
-    <div className="App">
-      <h1>Initial Stage</h1>
-    </div>
+    <Main>
+      <Container>
+        <Panel />
+        <Screen />
+      </Container>
+    </Main>
   );
 }
 
