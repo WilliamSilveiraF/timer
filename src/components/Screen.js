@@ -59,25 +59,24 @@ const Recycle = styled(BsRecycle).attrs({
 `
 
 const MyScreen = () => {
-  const { 
-   timer,
-   setTimer,
+
+  const {
+   time,
    formatTime,
-   startTimer,
+   goTimer,
    pauseTimer,
    recycleTimer
   } = useGlobalContext()
-  setTimer(timer)
-  console.log(timer)
+
   return (
    <Screen>
      <Clock>
        <h4>Session</h4>
-       <h1>{ formatTime(timer.time) }</h1>
+       <h1>{ formatTime(time) }</h1>
      </Clock>
      <Controllers>
          <Play 
-          onClick={() => startTimer()} 
+          onClick={() => goTimer()} 
          />
          <Pause 
           onClick={() => pauseTimer()} 
