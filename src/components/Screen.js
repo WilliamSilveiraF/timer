@@ -59,20 +59,27 @@ const Recycle = styled(BsRecycle).attrs({
 `
 
 const MyScreen = () => {
-
   const {
    time,
+   typePlayed,
    formatTime,
    goTimer,
    pauseTimer,
    recycleTimer
   } = useGlobalContext()
 
+  const H4 = styled.h4`
+    color: ${time < 60 && '#56cbdb'};
+  `
+  const H1 = styled.h1`
+    color: ${time < 60 && '#56cbdb'}
+  `
+
   return (
    <Screen>
      <Clock>
-       <h4>Session</h4>
-       <h1>{ formatTime(time) }</h1>
+       <H4>{ typePlayed }</H4>
+       <H1>{ formatTime(time) }</H1>
      </Clock>
      <Controllers>
          <Play 
